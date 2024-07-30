@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTR-ACERCA</title>
+    <style>
+        header {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, black, grey); /* Gradiente de negro a gris */
+        }
+        .LOGO-COMPU img {
+            max-width: 45%;
+            height: auto;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 1.2em;
+            position: relative;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            color: blue;
+            transform: scale(1.1);
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #f4f4f4;
+            list-style-type: none;
+            padding: 10px;
+            border-radius: 5px;
+            top: 90%; /* Ajuste para posicionar el submenú */
+            left: 0;
+            width: 200px;
+        }
+        .active {
+            color: white; /* Cambia el color del texto a blanco */
+            padding: 10px 15px; /* Ajusta el espaciado interno */
+            background: linear-gradient(to bottom, black, grey);
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul li ul li {
+            display: block;
+            margin: 5px 0;
+        }
+
+        #about {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px black;
+            font-size: 1.3em; /* Tamaño de letra más grande */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, black, grey);
+            color: white; 
+        }   
+    </style>
+</head>
+<body>
+    <header>
+        <div class="LOGO-COMPU">
+            <img src="C:\Users\Jeche123\Pictures\COMPUBL.png" alt="Logo Compu">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\INICIO.html">INICIO</a></li>
+                <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\MANTENIMIENTO.html#MANTENIMIENTO">MANTENIMIENTO</a></li>
+                <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\STORE.html#STORE" >STORE</a></li>
+                <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\ACERCA.html#ACERCA"class="active">ACERCA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>¿Qué es COMPUTECHREPAIR?</h2>
+        <p>COMPUTECHREPAIR es un término que combina "computadora" y "reparación" o abreviando CTR. Este sitio web está dedicado a proporcionar información y recursos sobre mantenimiento de hardware, incluyendo monitores, placas madre y otros componentes esenciales de las computadoras.</p>
+        <p>Nuestro objetivo es ser una fuente confiable para aquellos que buscan resolver problemas técnicos relacionados con sus dispositivos informáticos. Ofrecemos tutoriales, consejos de expertos y recomendaciones de productos para ayudarte a mantener tus equipos en óptimas condiciones de funcionamiento.</p>
+        <p>Además de brindar información y recursos, también ofrecemos una amplia gama de partes de computadoras y periféricos de alta calidad a precios competitivos. Ya sea que necesites actualizar tu hardware o simplemente busques los mejores accesorios, nuestra tienda tiene lo que necesitas. </p>
+    </section>
+
+    <footer>
+        <div class="derechos">
+            <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\LOGOCOMPU.png">
+            <p>&copy; 2024 Todos los derechos reservados.</p>
+        </div>  
+    </footer>
+</body>
+</html>
+

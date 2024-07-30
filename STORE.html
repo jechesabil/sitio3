@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTR-STORE</title>
+    <style>
+        header {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, black, grey); /* Gradiente de negro a gris */
+        }
+        .LOGO-COMPU img {
+            max-width: 45%;
+            height: auto;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 1.2em;
+            position: relative;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            color: blue;
+            transform: scale(1.1);
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #f4f4f4;
+            list-style-type: none;
+            padding: 10px;
+            border-radius: 5px;
+            top: 90%; /* Ajuste para posicionar el submenú */
+            left: 0;
+            width: 200px;
+        }
+        .active {
+            color: white; /* Cambia el color del texto a blanco */
+            padding: 10px 15px; /* Ajusta el espaciado interno */
+            background: linear-gradient(to bottom, black, grey);
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul li ul li {
+            display: block;
+            margin: 5px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, black, grey);
+            color: white; 
+        }
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .producto {
+            width: calc(20% - 20px); /* Ajuste del ancho para mostrar 5 elementos por fila con espacio */
+            margin: 10px; /* Espacio entre productos */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .carrito {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="LOGO-COMPU">
+        <img src="C:\Users\Jeche123\Pictures\COMPUBL.png" alt="Logo Compu">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\INICIO.html">INICIO</a></li>
+            <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\MANTENIMIENTO.html#MANTENIMIENTO">MANTENIMIENTO</a></li>
+            <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\STORE.html#STORE" class="active">STORE</a></li>
+            <li><a href="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\ACERCA.html#ACERCA">ACERCA</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="productos">
+    <div class="producto" id="monitor">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\MONITOR.jpeg" alt="Monitor" style="max-width: 100%; height: auto;">
+        <h3>Monitor</h3>
+        <p>$200</p>
+        <button onclick="agregarAlCarrito('Monitor', 200)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" id="fuente">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\FUENTE DE PODER.png" alt="Fuente de Poder" style="max-width: 100%; height: auto;">
+        <h3>Fuente de Poder</h3>
+        <p>$50</p>
+        <button onclick="agregarAlCarrito('Fuente de Poder', 50)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="mouse">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\MOUSE..gif" alt="Mouse" style="max-width: 100%; height: auto;">
+        <h3>Mouse</h3>
+        <p>$30</p>
+        <button onclick="agregarAlCarrito('Mouse', 30)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="teclado">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\TECLADO.png" alt="Teclado" style="max-width: 100%; height: auto;">
+        <h3>Teclado</h3>
+        <p>$40</p>
+        <button onclick="agregarAlCarrito('Teclado', 40)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="placa">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\PLACAMADRE.jpg" alt="Placa Madre" style="max-width: 100%; height: auto;">
+        <h3>Placa Madre</h3>
+        <p>$150</p>
+        <button onclick="agregarAlCarrito('Placa Madre', 150)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="computadora-portatil">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\CP.png" alt="Computadora Portátil" style="max-width: 100%; height: auto;">
+        <h3>Computadora Portátil</h3>
+        <p>$100</p>
+        <button onclick="agregarAlCarrito('Computadora Portátil', 100)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="case">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\CASE.jpg" alt="Case" style="max-width: 100%; height: auto;">
+        <h3>Case</h3>
+        <p>$40</p>
+        <button onclick="agregarAlCarrito('Case', 40)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="router">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\ROUTER.jpeg" alt="Router" style="max-width: 100%; height: auto;">
+        <h3>Router</h3>
+        <p>$150</p>
+        <button onclick="agregarAlCarrito('Router', 150)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="disco-duro-solido">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\Disco-duro-solido.jpg" alt="Disco Duro Sólido" style="max-width: 100%; height: auto;">
+        <h3>Disco Duro Sólido</h3>
+        <p>$150</p>
+        <button onclick="agregarAlCarrito('Disco Duro Sólido', 150)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="tarjeta-grafica">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\TARJETA GRAFICA.jpeg" alt="Tarjeta Gráfica" style="max-width: 100%; height: auto;">
+        <h3>Tarjeta Gráfica</h3>
+        <p>$95</p>
+        <button onclick="agregarAlCarrito('Tarjeta Gráfica', 95)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="audifonos">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\audifonos.jpeg" alt="Audífonos" style="max-width: 100%; height: auto;">
+        <h3>Audífonos</h3>
+        <p>$25</p>
+        <button onclick="agregarAlCarrito('Audífonos', 25)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="impresora">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\impresora.jpeg" alt="Impresora" style="max-width: 100%; height: auto;">
+        <h3>Impresora</h3>
+        <p>$120</p>
+        <button onclick="agregarAlCarrito('Impresora', 120)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="webcam">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\webcam.jpg" alt="Webcam" style="max-width: 100%; height: auto;">
+        <h3>Webcam</h3>
+        <p>$35</p>
+        <button onclick="agregarAlCarrito('Webcam', 35)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="memoria-usb">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\memoria ram.gif" alt="Memoria USB" style="max-width: 100%; height: auto;">
+        <h3>Memoria USB</h3>
+        <p>$15</p>
+        <button onclick="agregarAlCarrito('Memoria USB', 15)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="teclado-gamer">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\teclado gamer.gif" alt="Teclado Gamer" style="max-width: 100%; height: auto;">
+        <h3>Teclado Gamer</h3>
+        <p>$60</p>
+        <button onclick="agregarAlCarrito('Teclado Gamer', 60)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="silla">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\silla.jpg" alt="Silla" style="max-width: 100%; height: auto;">
+        <h3>Silla</h3>
+        <p>$80</p>
+        <button onclick="agregarAlCarrito('Silla', 80)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="auriculares">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\auriculares.gif" alt="Auriculares" style="max-width: 100%; height: auto;">
+        <h3>Auriculares</h3>
+        <p>$40</p>
+        <button onclick="agregarAlCarrito('Auriculares', 40)">Agregar al carrito</button>
+    </div>
+    <div class="producto" id="monitor-gamer">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\monitor gamer.jpeg" alt="Monitor Gamer" style="max-width: 100%; height: auto;">
+        <h3>Monitor Gamer</h3>
+        <p>$300</p>
+        <button onclick="agregarAlCarrito('Monitor Gamer', 300)">Agregar al carrito</button>
+    </div>
+</div>
+
+<div class="carrito">
+    <h2>Carrito</h2>
+    <ul id="lista-carrito">
+        <!-- Los elementos seleccionados se agregarán aquí -->
+    </ul>
+    <p>Total: <span id="total-carrito">0</span></p>
+</div>
+
+<footer>
+    <div class="derechos">
+        <img src="C:\Users\Jeche123\Desktop\INDEX EMPRESARIAL\IMG\LOGOCOMPU.png" alt="Logo Compu">
+         <p>&copy; 2024 Todos los derechos reservados.</p>
+    </div> 
+</footer>
+
+<script>
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(nombre, precio) {
+        const listaCarrito = document.getElementById('lista-carrito');
+        const totalCarrito = document.getElementById('total-carrito');
+
+        // Crear elemento de lista para el producto
+        const elementoProducto = document.createElement('li');
+        elementoProducto.textContent = nombre + ' - $' + precio;
+
+        // Crear botón para eliminar el producto
+        const botonEliminar = document.createElement('button');
+        botonEliminar.textContent = 'Eliminar';
+        botonEliminar.onclick = function() {
+            // Actualizar el total del carrito al eliminar el producto
+            totalCarrito.textContent = (parseFloat(totalCarrito.textContent) - precio).toFixed(2);
+            // Eliminar el elemento del carrito
+            listaCarrito.removeChild(elementoProducto);
+        };
+
+        // Agregar el botón de eliminar al elemento de lista
+        elementoProducto.appendChild(botonEliminar);
+
+        // Agregar el producto a la lista del carrito
+        listaCarrito.appendChild(elementoProducto);
+
+        // Actualizar el total del carrito
+        let totalActual = parseFloat(totalCarrito.textContent);
+        totalActual += precio;
+        totalCarrito.textContent = totalActual.toFixed(2); // Redondear a 2 decimales
+    }
+</script>
+
+</body>
+</html>
